@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Visa:</strong>
+  <%= @order.visa %>
+</p>
+
+<p>
+  <strong>Fast track:</strong>
+  <%= @order.fast_track %>
+</p>
+
+<p>
+  <strong>Private letter:</strong>
+  <%= @order.private_letter %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @order.amount %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @order.speed %>
+</p>
+
+<p>
+  <strong>Border point:</strong>
+  <%= @order.border_point %>
+</p>
+
+<p>
+  <strong>Entry date:</strong>
+  <%= @order.entry_date %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Customer name:</strong>
+  <%= @order.customer_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @order.phone %>
+</p>
+
+<p>
+  <strong>Passport number:</strong>
+  <%= @order.passport_number %>
+</p>
+
+<p>
+  <strong>Passport name:</strong>
+  <%= @order.passport_name %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @order.nationality %>
+</p>
+
+<p>
+  <strong>Passport issued:</strong>
+  <%= @order.passport_issued %>
+</p>
+
+<p>
+  <strong>Passport end:</strong>
+  <%= @order.passport_end %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @order.gender %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @order.birthday %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

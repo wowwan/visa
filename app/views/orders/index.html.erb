@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Visa</th>
+      <th>Fast track</th>
+      <th>Private letter</th>
+      <th>Amount</th>
+      <th>Speed</th>
+      <th>Border point</th>
+      <th>Entry date</th>
+      <th>Email</th>
+      <th>Customer name</th>
+      <th>Phone</th>
+      <th>Passport number</th>
+      <th>Passport name</th>
+      <th>Nationality</th>
+      <th>Passport issued</th>
+      <th>Passport end</th>
+      <th>Gender</th>
+      <th>Birthday</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.visa %></td>
+        <td><%= order.fast_track %></td>
+        <td><%= order.private_letter %></td>
+        <td><%= order.amount %></td>
+        <td><%= order.speed %></td>
+        <td><%= order.border_point %></td>
+        <td><%= order.entry_date %></td>
+        <td><%= order.email %></td>
+        <td><%= order.customer_name %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.passport_number %></td>
+        <td><%= order.passport_name %></td>
+        <td><%= order.nationality %></td>
+        <td><%= order.passport_issued %></td>
+        <td><%= order.passport_end %></td>
+        <td><%= order.gender %></td>
+        <td><%= order.birthday %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

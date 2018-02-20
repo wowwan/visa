@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visa: MyString
+  fast_track: false
+  private_letter: false
+  amount: 1
+  speed: MyString
+  border_point: MyString
+  entry_date: 2018-02-20
+  email: MyString
+  customer_name: MyString
+  phone: MyString
+  passport_number: MyString
+  passport_name: MyString
+  nationality: MyString
+  passport_issued: 2018-02-20
+  passport_end: 2018-02-20
+  gender: MyString
+  birthday: 2018-02-20
+
+two:
+  visa: MyString
+  fast_track: false
+  private_letter: false
+  amount: 1
+  speed: MyString
+  border_point: MyString
+  entry_date: 2018-02-20
+  email: MyString
+  customer_name: MyString
+  phone: MyString
+  passport_number: MyString
+  passport_name: MyString
+  nationality: MyString
+  passport_issued: 2018-02-20
+  passport_end: 2018-02-20
+  gender: MyString
+  birthday: 2018-02-20
