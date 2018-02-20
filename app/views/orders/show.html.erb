@@ -30,6 +30,12 @@
   <%= @order.border_point %>
 </p>
 
+<ol>
+  <% for passport in @order.passports %>
+   <li><%=h passport.name%></li>
+  <% end %>
+</ol>
+
 <p>
   <strong>Entry date:</strong>
   <%= @order.entry_date %>

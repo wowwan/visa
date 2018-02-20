@@ -16,6 +16,8 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @visas = Visa.all
+    3.times { @order.passports.build }
+
   end
 
   # GET /orders/1/edit
@@ -72,6 +74,6 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:visa, :fast_track, :private_letter, :amount, :speed, 
       :border_point, :entry_date, :email, :customer_name, :phone, :passport_number, :passport_name, :nationality, :passport_issued, :passport_end, 
-      :gender, :birthday, :qty, :status)
+      :gender, :birthday, :qty, :status, :passports_attributes => [:name, :nationality, :number, :gender, :birthday, :issue_date, :finish_date])
     end
 end

@@ -1,4 +1,6 @@
-<div id="theform" data-remote="true">
+<div id="form" data-remote="true">
+
+<fieldset>
 
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
@@ -12,7 +14,7 @@
       </ul>
     </div>
   <% end %>
-  
+       
   
   <div class="field">
     <%= f.label :qty %><br>
@@ -21,9 +23,9 @@
   <tr>
 				<td width="41%" align="right" valign="middle">
 				<td width="59%" align="left" valign="middle">
-				  <h4>Purpose</h4>
+				<label>Select propose:</label><br>
+
 					<select name="category1" id="category1">
-					  
 						<option value="">Select Purpose</option>
 						<option value="business">Business</option>
 						<option value="tourism">Tourism</option>
@@ -46,10 +48,6 @@
   <div class="field">
     <%= f.label :private_letter %><br>
     <%= f.check_box :private_letter %>
-  </div>
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.number_field :amount %>
   </div>
   <div class="field">
     <%= f.label :speed %><br>
@@ -82,14 +80,8 @@
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
-  <div class="field">
-    <%= f.label :passport_number %><br>
-    <%= f.text_field :passport_number %>
-  </div>
-  <div class="field">
-    <%= f.label :passport_name %><br>
-    <%= f.text_field :passport_name %>
-  </div>
+  
+  
   <div class="field">
   <%= f.label :nationality %><br>
   <select class="form-control" id="select" name="order[nationality]">
@@ -318,26 +310,12 @@
 	<option value="ZM">ZAMBIA</option>
 	<option value="ZW">ZIMBABWE</option>
 </select>
+
   </div>
-  <div class="field">
-    <%= f.label :passport_issued %><br>
-    <%= f.date_select :passport_issued %>
-  </div>
-  <div class="field">
-    <%= f.label :passport_end %><br>
-    <%= f.date_select :passport_end %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <input type="radio" id="GenderChoice1"
-     name="order[gender]" value="male">Male</input>
-     <input type="radio" id="GenderChoice2"
-     name="order[gender]" value="female">Female</input>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
-  </div>
+  </fieldset>
+  <%= f.fields_for :passports do |builder| %>
+    <% render 'passport_fields', f: builder %>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

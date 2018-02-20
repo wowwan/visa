@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220130254) do
+ActiveRecord::Schema.define(version: 20180220141557) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "visa"
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 20180220130254) do
     t.string   "status"
     t.integer  "qty"
   end
+
+  create_table "passports", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "number"
+    t.string   "nationality"
+    t.string   "gender"
+    t.date     "issue_date"
+    t.date     "finish_date"
+    t.string   "name"
+    t.date     "birhday"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "passports", ["order_id"], name: "index_passports_on_order_id"
 
   create_table "visas", force: :cascade do |t|
     t.string   "name"
