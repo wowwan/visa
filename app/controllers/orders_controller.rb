@@ -14,29 +14,41 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    session[:order_params] ||= {}
+    @order = Order.new(session[:order_params])
+    @order.current_step = session[:order_step]
     @visas = Visa.all
-    3.times { @order.passports.build }
-
   end
 
   # GET /orders/1/edit
   def edit
+
   end
 
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    session[:order_params].deep_merge!(params[:order]) if params[:order]
+    @order = Order.new(session[:order_params])
+    @order.current_step = session[:order_step]
+    @order.passports.build
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+    if @order.valid?
+      if params[:back_button]
+        @order.previous_step
+      elsif @order.last_step?
+        @order.save if @order.all_valid?
       else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        @order.next_step
       end
+      session[:order_step] = @order.current_step
+    end
+    if @order.new_record?
+      render "new"
+    else
+      session[:order_step] = session[:order_params] = nil
+      flash[:notice] = "Order saved!"
+      redirect_to @order
     end
   end
 
@@ -63,6 +75,8 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

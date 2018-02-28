@@ -1,0 +1,53 @@
+<h2>1 step</h2>
+<div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <tr>
+				<td width="41%" align="right" valign="middle">
+				<td width="59%" align="left" valign="middle">
+				<label>Select propose:</label><br>
+
+					<select name="category1" id="category1">
+						<option value="">Select Purpose</option>
+						<option value="business">Business</option>
+						<option value="tourism">Tourism</option>
+					</select>
+				</td>
+   
+  <div class="field">
+    <%= f.label :visa %><br>
+    <select disabled="disabled" class="subcat" id="category2" name="order[visa]">
+      <%= options_for_select(@visas.map{ |c| [c.name, c.name, { 'rel' => c.category}] }) %>
+    </select><br>
+    <div>
+
+    </div>
+    </div>
+  <div class="field">
+    <%= f.label :fast_track %><br>
+    <%= f.check_box :fast_track %>
+  </div>
+  <div class="field">
+    <%= f.label :private_letter %><br>
+    <%= f.check_box :private_letter %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br>
+    <select class="form-control" id="select" name="order[speed]">
+	  <option value="Normal">Normal</option>
+	  <option value="Urgent">Urgent</option>
+	  <option value="Super Urgent">Super Urgent</option>
+	  </select>
+  </div>
+  <div class="field">
+    <%= f.label :border_point %><br>
+    <select class="form-control" id="select" name="order[border_point]">
+	  <option value="Hanoi">Hanoi int airport</option>
+	  <option value="HCMC">Ho Chi Mihn City</option>
+	  </select>
+  </div>
+  <div class="field">
+    <%= f.label :entry_date %><br>
+    <%= f.date_select :entry_date %>
+  </div>
