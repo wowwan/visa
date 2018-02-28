@@ -1,6 +1,8 @@
-<div id="form" data-remote="true">
+<div id="form" data-remote="true" class="form-group">
 
-
+<div id="field">
+  <h2 id="sum">SUM:   </h2>
+</div>
 
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
@@ -16,11 +18,13 @@
   <% end %>
        
   <%= render "#{@order.current_step}_step", :f => f %>
+  <div class="btn btn-primary">
   <p><%= f.submit "Continue" %></p>
   <p><%= f.submit "Back", :name => "back_button" unless @order.first_step? %></p>
-
+  </div>
   
   
   
 <% end %>
 </div>
+

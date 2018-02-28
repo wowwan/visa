@@ -1,10 +1,16 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
+
+    respond_to do |format|
+    format.html
+    format.json
+  end
   end
 
   # GET /orders/1
@@ -18,6 +24,7 @@ class OrdersController < ApplicationController
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
     @visas = Visa.all
+
   end
 
   # GET /orders/1/edit
@@ -28,10 +35,12 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+        @visas = Visa.all
+
     session[:order_params].deep_merge!(params[:order]) if params[:order]
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
-    @order.passports.build
+        @order.passports.build
 
     if @order.valid?
       if params[:back_button]
@@ -51,7 +60,8 @@ class OrdersController < ApplicationController
       redirect_to @order
     end
   end
-
+  
+  
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
