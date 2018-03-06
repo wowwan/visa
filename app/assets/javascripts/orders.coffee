@@ -4,7 +4,7 @@ $(document).on 'turbolinks:load', ->
   $cat.on 'change', ->
 
     _rel = $(this).val()
-    content = $('<%= escape_javascript(render "visa_prices") %>')
+
 
     $subcat.find('option').attr 'style', ''
     $subcat.val ''
@@ -12,7 +12,6 @@ $(document).on 'turbolinks:load', ->
       return $subcat.prop('disabled', true)
     $subcat.find('[rel=' + _rel + ']').show()
     $subcat.prop 'disabled', false
-    $('#sum').html(content)
     return
   return
   

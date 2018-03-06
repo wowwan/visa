@@ -18,9 +18,11 @@
   <% end %>
        
   <%= render "#{@order.current_step}_step", :f => f %>
+  <%= render 'visa_price' %>
   <div class="btn btn-primary">
   <p><%= f.submit "Continue" %></p>
   <p><%= f.submit "Back", :name => "back_button" unless @order.first_step? %></p>
+  
   </div>
   
   

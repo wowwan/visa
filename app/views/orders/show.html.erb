@@ -1,18 +1,52 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Order Number:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Order Created:</strong>
+  <%= @order.created_at %>
+</p>
+<p>
+  <strong>Your approval letter readiness date:</strong>
+  <%= @readiness_date %>
+</p>
+<p>
+  <strong>TOTAL:</strong>
+  <%= @summa %>
+</p>
+
+<p>
+  <strong>QTY of visitors:</strong>
+  <%= @order.qty %>
+</p>
+
+
+<p>
   <strong>Visa:</strong>
   <%= @order.visa %>
 </p>
 
 <p>
-  <strong>Fast track:</strong>
-  <%= @order.fast_track %>
+  <strong>Amount:</strong>
+  <%= @order.amount %>
 </p>
 
 <p>
+  
+  <% if @order.fast_track == true %>
+  <strong>Fast track:</strong>
+  <%= @order.fast_track %>
+  <% end %>
+</p>
+
+<p>
+  <% if @order.private_letter == true %>
   <strong>Private letter:</strong>
   <%= @order.private_letter %>
+  <% end %>
 </p>
 
 <p>
@@ -33,6 +67,11 @@
 <ol>
   <% for passport in @order.passports %>
    <li><%=h passport.name%></li>
+   <li><%=h passport.number%></li>
+   <li><%=h passport.nationality%></li>
+   <li><%=h passport.gender%></li>
+   <li><%=h passport.finish_date%></li>
+   <li><%=h passport.birhday%></li>
   <% end %>
 </ol>
 
@@ -57,39 +96,10 @@
 </p>
 
 <p>
-  <strong>Passport number:</strong>
-  <%= @order.passport_number %>
-</p>
-
-<p>
-  <strong>Passport name:</strong>
-  <%= @order.passport_name %>
-</p>
-
-<p>
   <strong>Nationality:</strong>
   <%= @order.nationality %>
 </p>
 
-<p>
-  <strong>Passport issued:</strong>
-  <%= @order.passport_issued %>
-</p>
-
-<p>
-  <strong>Passport end:</strong>
-  <%= @order.passport_end %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @order.gender %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @order.birthday %>
-</p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

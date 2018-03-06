@@ -1,4 +1,6 @@
 <h2>1 step</h2>
+
+<label id="label1"></label>
 <div class="field">
     <%= f.label :qty %><br>
     <%= f.number_field :qty %>
@@ -15,18 +17,19 @@
 					</select>
 				</td>
    
+   
   <div class="field">
     <%= f.label :visa %><br>
     <select disabled="disabled" class="subcat" id="category2" name="order[visa]">
-      <%= options_for_select(@visas.map{ |c| [c.name, c.name, { 'rel' => c.category}] }) %>
+      <%= options_for_select(@visas.map{ |c| [c.name, c.id, { 'rel' => c.category}] }) %>
     </select><br>
     <div>
 
     </div>
     </div>
   <div class="field">
-    <%= f.label :fast_track %><br>
-    <%= f.check_box :fast_track %>
+    <label for="order_fast_track">Fast track</label><br>
+    <input name="order[fast_track]" type="hidden" value="0" /><input type="checkbox" value="1" name="order[fast_track]" id="fast_track">
   </div>
   <div class="field">
     <%= f.label :private_letter %><br>

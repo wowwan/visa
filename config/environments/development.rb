@@ -19,6 +19,19 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :tls => true,
+  address: 'smtp.yandex.ru',
+  port: 465,
+  domain: 'yandex.ru',
+  authentication: 'plain',
+  user_name: 'info@visatovietnam.online',
+  password: 'Romans1982',
+  enable_starttls_auto: true
+  }
+
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 

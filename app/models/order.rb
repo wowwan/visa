@@ -1,4 +1,7 @@
 class Order < ActiveRecord::Base
+  
+resourcify
+
 has_many :passports
 
 accepts_nested_attributes_for :passports, allow_destroy: true
@@ -29,11 +32,15 @@ accepts_nested_attributes_for :passports, allow_destroy: true
     current_step == steps.last
   end
   
+  
+  
   def all_valid?
     steps.all? do |step|
       self.current_step = step
       valid?
     end
   end
+   
+   
     
 end
