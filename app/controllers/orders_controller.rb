@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_amount, only: [:show]
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:new, :create, :show]
 
   respond_to :html, :js
 
