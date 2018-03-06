@@ -1,7 +1,14 @@
-<h2>3 step</h2>
+<h2>Passport</h2>
+
+
+
 <%= f.fields_for :passports do |builder| %>
     <% render 'orders/passport_fields',:f => builder %>
 <% end %>
+<div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+ </div>
 
 <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">

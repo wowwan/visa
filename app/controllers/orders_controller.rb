@@ -150,7 +150,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:visa, :fast_track, :private_letter, :amount, :speed, 
+      params.require(:order).permit(:image, :visa, :fast_track, :private_letter, :amount, :speed, 
       :border_point, :entry_date, :email, :customer_name, :phone, :passport_number, :passport_name, :nationality, :passport_issued, :passport_end, 
       :gender, :birthday, :qty, :status, :passports_attributes => [:name, :nationality, :number, :gender, :birthday, :issue_date, :finish_date])
     end

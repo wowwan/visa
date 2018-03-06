@@ -1,12 +1,11 @@
 class Order < ActiveRecord::Base
   
 resourcify
-
 has_many :passports
-
 accepts_nested_attributes_for :passports, allow_destroy: true
-    
- attr_writer :current_step
+attr_writer :current_step
+dragonfly_accessor :image
+validates_size_of :image, maximum: 5000.kilobytes
   
   def current_step
     @current_step || steps.first

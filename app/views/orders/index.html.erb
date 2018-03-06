@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
+
       <th>Visa</th>
       <th>Fast track</th>
       <th>Private letter</th>
@@ -29,6 +31,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <td><%= link_to image_tag(order.image.thumb('100x100').url), order.image.url  %></td>
         <td><%= order.visa %></td>
         <td><%= order.fast_track %></td>
         <td><%= order.private_letter %></td>
