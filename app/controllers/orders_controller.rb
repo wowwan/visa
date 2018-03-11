@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
     session[:order_params].deep_merge!(params[:order]) if params[:order]
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
-       3.times{ @order.passports.build }
+    @order.passports.build
 
     if @order.valid?
       if params[:back_button]
@@ -152,6 +152,6 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:image, :visa, :fast_track, :private_letter, :amount, :speed, 
       :border_point, :entry_date, :exit_date, :email, :customer_name, :phone, :passport_number, :passport_name, :nationality,
-      :qty, :status, :passports_attributes => [:name, :nationality, :number, :gender, :birthday, :issue_date, :finish_date])
+      :qty, :status, :passports_attributes => [:name, :nationality, :number, :gender, :birthday, :issue_date, :finish_date, :_destroy])
     end
 end

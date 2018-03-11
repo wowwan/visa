@@ -12,7 +12,7 @@ gem 'responders'
 gem 'rolify'
 gem 'dragonfly'
 gem 'bootstrap-datepicker-rails'
-
+gem 'cocoon'
 
 
 # Use SCSS for stylesheets

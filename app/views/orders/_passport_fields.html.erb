@@ -1,3 +1,4 @@
+<div class="nested-fields">
 <div class="row">
   
           <div class="field">
@@ -18,10 +19,6 @@
           <%= f.date_select :finish_date%>
           </div>         
           
-          <div class="field">
-          <%= f.hidden_field(:_destroy) %>
-          <%= link_to "Remove", "#", class: "remove"%>
-          </div>    
           
           <div>
               <%= f.label :gender, "Gender:" %><br/>
@@ -30,7 +27,7 @@
               <i class="fa fa-male"></i>
               Male</input>
               <input type="radio" id="GenderChoice2"name="order[gender]" value="female" class="form-control">
-              <i class="fa fa-female"></i>Female</input>
+              <i class="fa fa-female"></i> Female</input>
               </span>
           </div>
           <div class="field">
@@ -41,4 +38,7 @@
           <%= f.label :nationality, "Nationality" %><br/>
           <%= f.text_field :nationality %><br/>
           </div>
+            <%= link_to_remove_association "remove", f %>
+
+</div>
 </div>
