@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6">
+  
           <div class="field">
           <%= f.label :name, "Full Name" %><br/>
           <%= f.text_field :name %>
@@ -11,22 +11,26 @@
           <div class="field">
           <%= f.label :issue_date, "Passport issue date" %><br/>
           <%= f.date_select :issue_date%>
-          </div>          
+          </div>
+          
           <div class="field">
           <%= f.label :finish_date, "Passport finish date" %><br/>
           <%= f.date_select :finish_date%>
           </div>         
           
           <div class="field">
-          <%= f.hidden_field :_destroy %><br/>
-          <%= link_to "Remove", '#', class: "remove_fields" %>
+          <%= f.hidden_field(:_destroy) %>
+          <%= link_to "Remove", "#", class: "remove"%>
           </div>    
           
-          <div class="input-group"  aria-label="...">
+          <div>
               <%= f.label :gender, "Gender:" %><br/>
               <span class="input-group-addon">
-              <input type="radio" id="GenderChoice1"name="order[gender]" value="male" class="form-control">Male</input>
-              <input type="radio" id="GenderChoice2"name="order[gender]" value="female" class="form-control">Female</input>
+              <input type="radio" id="GenderChoice1"name="order[gender]" value="male" class="form-control">
+              <i class="fa fa-male"></i>
+              Male</input>
+              <input type="radio" id="GenderChoice2"name="order[gender]" value="female" class="form-control">
+              <i class="fa fa-female"></i>Female</input>
               </span>
           </div>
           <div class="field">
@@ -37,6 +41,4 @@
           <%= f.label :nationality, "Nationality" %><br/>
           <%= f.text_field :nationality %><br/>
           </div>
-</div>
-</div>
 </div>

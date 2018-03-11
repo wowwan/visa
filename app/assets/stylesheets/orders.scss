@@ -8,3 +8,30 @@
 .subcat option.label{
     display:block;
 }
+#order_qty{
+   border: 1px gray solid;
+   padding: 10px;
+}
+input{
+  border:none;
+  background-color: transparent;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.fa-user-circle-o{
+  color: gray;
+}
+
+.input-group{
+  border: 1px gray solid;
+  padding: 10px;
+}
+.btn-primary{
+      background-color: #e90000;
+
+}

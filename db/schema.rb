@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306162416) do
+ActiveRecord::Schema.define(version: 20180311105026) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "visa"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180306162416) do
     t.string   "status"
     t.integer  "qty"
     t.string   "image_uid"
+    t.date     "exit_date"
   end
 
   create_table "passports", force: :cascade do |t|

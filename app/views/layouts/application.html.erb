@@ -4,25 +4,88 @@
   <title>Visa to Vietnam</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "application" %>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" 
+  integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/cd90986640.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <%= csrf_meta_tags %>
 </head>
-<% if user_signed_in? %>
-    <%= link_to "sign out",destroy_user_session_path, method: :delete   %>
-<% end %>
-<br>
 <body>
-<nav>
-<ul>
-  <a href="#">Home</a>
-  <li>Pricing</li>
-  <li>How </li>
-  <li>Contacts</li>
-</ul>
+<div id="wrap">
+<div id="main" class="container clear-top">
+<div>SSSSSSSSSSSSSSSS</div>
+<nav class="navbar fixed-top navbar navbar-expand-lg  navbar-light">
+  <a class="navbar-brand" href="#">
+<img class="title" src="/media/W1siZiIsIjIwMTgvMDMvMDcvODRyM2t1NHc1MF81MjRweF9Db2F0X29mX2FybXNfb2ZfVmlldG5hbS5zdmcucG5nIl0sWyJwIiwidGh1bWIiLCIxMDB4MTAwIl1d?sha=7c876b2bc378f248" 
+height="45px;">Việt Nam</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="dr" href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+      <a class="dr" href="#"><i class="fa fa-facebook-official fa-2x "></i></a>
+      <a class="dr" href="#"><i class="fa fa-instagram fa-2x"></i></a>
+      <a class="dr" href="#"><i class="fa fa-vk fa-2x"></i></a>
+      <% if controller.action_name != "new" %>
+      	<div class="row">
+
+      		  <%= button_tag( id: "btnFA", class: "btn btn-warning") do %>
+      		  Apply Now
+      		  
+      			<i class="fa fa-hand-pointer-o"></i>
+           <% end %>
+      		
+      		
+       </div>
+       <% else %>
+       <div></div>
+       <% end %>
+       
+       
+    </form>
+  </div>
 </nav>
 
 <%= yield %>
+<div class="line"></div>
 
+</div>
+</div>
 </body>
+<footer class="footer">
+  
+  
+  <form class="form-inline my-2 my-lg-0">
+    <h5>Join us</h5>
+      <a class="dr" href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+      <a class="dr" href="#"><i class="fa fa-facebook-official fa-2x "></i></a>
+      <a class="dr" href="#"><i class="fa fa-instagram fa-2x"></i></a>
+      <a class="dr" href="#"><i class="fa fa-vk fa-2x"></i></a>
+</footer>
+
 </html>

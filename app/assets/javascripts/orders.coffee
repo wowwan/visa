@@ -1,6 +1,6 @@
 $(document).on 'turbolinks:load', ->
   $cat = $('#category1')
-  $subcat = $('.subcat')
+  $subcat = $('#category2')
   $cat.on 'change', ->
 
     _rel = $(this).val()
@@ -13,6 +13,18 @@ $(document).on 'turbolinks:load', ->
     $subcat.find('[rel=' + _rel + ']').show()
     $subcat.prop 'disabled', false
     return
+    
+  $('.datepicker').datepicker()
   return
+  
+  return
+  
+  
+  
+  
+  
+
+
+  
   
 
